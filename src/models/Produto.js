@@ -123,7 +123,7 @@ export class Produto {
             dados.nome ?? dados.nomeProduto,
             dados.valor,
             dados.caminhoImagem ?? dados.caminhoImage ?? dados.vinculoImagem,
-            dados.estoque,
+            dados.estoque,  
             id
         );
     }

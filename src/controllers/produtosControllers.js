@@ -12,10 +12,13 @@ const produtoController = {
             const estoque = Number(req.body.estoque); // converte o estoque recebido na requisição para número
             const caminhoImagem = `/uploads/images/${req.file.filename}`;
 
+            console.log(req.body);
+            console.log(req.file);
+            console.log(valor);
             const produto = Produto.criar({ idCategoria, nome, valor, estoque, caminhoImagem }); // utiliza o método estático criar da classe Produto para criar um objeto da classe Produto a partir dos dados recebidos na requisição
 
-            
-            
+
+
 
             const resultado = await produtoRepository.criar(produto);
             res.status(201).json(resultado);
@@ -52,15 +55,15 @@ const produtoController = {
 
             valor = Number(valor);
             estoque = Number(estoque);
-            
+
             const produto = Produto.editar({
                 idCategoria: produtoExistente[0].id_categoria,
                 nomeProduto: produtoExistente[0].nome,
                 valor: valor ?? produtoExistente[0].preco,
-                estoque: estoque ?? produtoExistente[0].estoque, 
-                caminhoImagem: caminhoImagem ?? produtoExistente[0].imagem 
+                estoque: estoque ?? produtoExistente[0].estoque,
+                caminhoImagem: caminhoImagem ?? produtoExistente[0].imagem
             }, id);
-            
+
             const resultado = await produtoRepository.editar(produto);
             return res.status(200).json({ resultado });
 
@@ -111,7 +114,7 @@ const produtoController = {
             const id = Number(req.params.id);
             const result = await produtoRepository.selecionarPorId(id);
             res.status(200).json({ result });
-            
+
         } catch (error) {
             console.log(error);
             res.status(500).json({
