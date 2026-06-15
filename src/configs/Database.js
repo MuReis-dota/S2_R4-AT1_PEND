@@ -97,7 +97,7 @@ export async function initializeDatabase() {
                 id INT NOT NULL AUTO_INCREMENT,
                 id_pedido INT NOT NULL,
                 id_produto INT NOT NULL,
-                quantidade NOT NULL,
+                quantidade INT NOT NULL,
                 valor_item DECIMAL(10,2) NOT NULL,
                 PRIMARY KEY (id),
                 FOREIGN KEY (id_pedido) REFERENCES pedidos(id),
