@@ -102,7 +102,7 @@ export async function initializeDatabase() {
                 PRIMARY KEY (id),
                 FOREIGN KEY (id_pedido) REFERENCES pedidos(id),
                 FOREIGN KEY (id_produto) REFERENCES produtos(id)
-            )
+            );
         `)
 
 
