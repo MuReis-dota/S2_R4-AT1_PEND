@@ -1,0 +1,488 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: S2_R4_AT1-PEND
+meta:
+  id: wrk_c54148d5ab8e4a8186d0aebad5c5698c
+  created: 1778171783693
+  modified: 1778171783693
+  description: ""
+collection:
+  - name: Categoria
+    meta:
+      id: fld_d9158a43a0394a27a06fcb949f714934
+      created: 1778171809809
+      modified: 1778171809809
+      sortKey: -1778171809809
+      description: ""
+    children:
+      - url: localhost:8081/categorias
+        name: Selecionar
+        meta:
+          id: req_58c73b2d87ad49dfae3de21916c899a0
+          created: 1778171814625
+          modified: 1778171879598
+          isPrivate: false
+          description: ""
+          sortKey: -1778171814625
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/categorias
+        name: Registrar
+        meta:
+          id: req_3a51a8783c1c47b586f16fd0553fd7b0
+          created: 1778171831530
+          modified: 1778172382772
+          isPrivate: false
+          description: ""
+          sortKey: -1778171831530
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+            	"nome": "roupas",
+            	"descricao": "são peças feitas de tecidos, peles ou materiais sintéticos utilizadas para cobrir o corpo humano."
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/categorias/2
+        name: Atualizar
+        meta:
+          id: req_c76624db90c946bbad01c152cddf60f8
+          created: 1778171850352
+          modified: 1778172272587
+          isPrivate: false
+          description: ""
+          sortKey: -1778171850352
+        method: PUT
+        body:
+          mimeType: application/json
+          text: >-
+            {
+            	"nome": "produtos de beleza",
+            	"descricao": "Higiene pessoal, cuidados estéticos (skincare, maquiagem) e perfumaria."
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/categorias/3
+        name: Delete
+        meta:
+          id: req_e17387bbdadc4433b3bbc950eec1773b
+          created: 1778171861933
+          modified: 1778172400891
+          isPrivate: false
+          description: ""
+          sortKey: -1778171861933
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Produtos
+    meta:
+      id: fld_03d4a3c6c33241c7992cccabc5afbc4d
+      created: 1778175444908
+      modified: 1778175461541
+      sortKey: -1778175444908
+      description: ""
+    children:
+      - url: localhost:8081/produtos
+        name: Selecionar
+        meta:
+          id: req_9c18d1de6dde42c4b1d97efa1a99acf0
+          created: 1778175447966
+          modified: 1778175496014
+          isPrivate: false
+          description: ""
+          sortKey: -1778175447966
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/produtos
+        name: Registrar
+        meta:
+          id: req_37084684352b4fe1a55838494125eab8
+          created: 1778175459059
+          modified: 1778507124759
+          isPrivate: false
+          description: ""
+          sortKey: -1778175459059
+        method: POST
+        body:
+          mimeType: multipart/form-data
+          params:
+            - name: idCategoria
+              value: "1"
+            - name: nome
+              value: camera
+              description: ""
+              disabled: false
+            - name: valor
+              value: "5699.90"
+              description: ""
+              disabled: false
+            - name: estoque
+              value: "10"
+              description: ""
+              disabled: false
+            - name: image
+              value: ""
+              description: ""
+              disabled: false
+              fileName: C:\Users\51844812812\Downloads\camera 2.png
+              type: file
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/produtos/1
+        name: Atualizar
+        meta:
+          id: req_8fc7874911ff4ef6aa5257e16075efb5
+          created: 1778175470075
+          modified: 1778504629109
+          isPrivate: false
+          description: ""
+          sortKey: -1778175470075
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"valor": 69.90,
+            	"estoque": 9
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/produtos/3
+        name: Delete
+        meta:
+          id: req_081c51c25e6448d1b5cb996470bb22d2
+          created: 1778175478953
+          modified: 1778507143681
+          isPrivate: false
+          description: ""
+          sortKey: -1778175478953
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/produtos/2
+        name: Selecionar Por ID
+        meta:
+          id: req_4e6ecafda4b546719f5d5b9e75b7f04b
+          created: 1778507170166
+          modified: 1778507200479
+          isPrivate: false
+          description: ""
+          sortKey: -1778507170166
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Pedidos
+    meta:
+      id: fld_37b22670965d44ccbd0a04fd3c07ac91
+      created: 1778512540201
+      modified: 1778512540201
+      sortKey: -1778512540201
+      description: ""
+    children:
+      - url: localhost:8081/pedidos
+        name: Selecionar
+        meta:
+          id: req_d44200d7490249d8b7f7f7b3b87fde89
+          created: 1778512710678
+          modified: 1778513551665
+          isPrivate: false
+          description: ""
+          sortKey: -1778512710678
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/pedidos
+        name: Registrar
+        meta:
+          id: req_2c9207a402064d15b2f54800741a108d
+          created: 1778512733014
+          modified: 1778513854360
+          isPrivate: false
+          description: ""
+          sortKey: -1778512733014
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "itens": [
+                {
+                  "idProduto": 1,
+                  "quantidade": 2,
+                  "valorItem": 69.90
+                },
+                {
+                  "idProduto": 4,
+                  "quantidade": 1,
+                  "valorItem": 5699.90
+                }
+              ]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/pedidos/editarStatus/1
+        name: Editar Status
+        meta:
+          id: req_83d4696759fe4b6e97a74e828a9baee3
+          created: 1778512893139
+          modified: 1778514208910
+          isPrivate: false
+          description: ""
+          sortKey: -1778512893139
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"status": "finalizado"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/pedidos/remover/1
+        name: Editar Remover
+        meta:
+          id: req_2b62e070397e4390b6c1529db9aa80dd
+          created: 1778512911335
+          modified: 1778514297304
+          isPrivate: false
+          description: ""
+          sortKey: -1778512911335
+        method: PUT
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/pedidos/editarQuantidade/2
+        name: Editar Quantidade
+        meta:
+          id: req_00b15a1b7a0b465aa0824c07d9c2042f
+          created: 1778512949785
+          modified: 1778514902411
+          isPrivate: false
+          description: ""
+          sortKey: -1778512949785
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"quantidade": 5
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/pedidos/adicionar/1
+        name: Editar Adicionar
+        meta:
+          id: req_4c46f60d919d49e5a971bd90968742f4
+          created: 1778512972867
+          modified: 1778514615380
+          isPrivate: false
+          description: ""
+          sortKey: -1778512972867
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "idProduto": 2,
+              "quantidade": 3,
+              "valorItem": 50
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_58bf8dd421c43bf84f7df96568857d67f72b8bf1
+    created: 1778171783712
+    modified: 1778171783712
+environments:
+  name: Base Environment
+  meta:
+    id: env_58bf8dd421c43bf84f7df96568857d67f72b8bf1
+    created: 1778171783701
+    modified: 1778171783701
+    isPrivate: false
